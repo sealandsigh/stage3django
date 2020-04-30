@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>积分商城首页</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <meta
-      name="description"
-      content=""
-    />
-    <link rel="stylesheet" href="/static/lib/weui.min.css" />
-    <link rel="stylesheet" href="/static/css/jquery-weui.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-  </head>
-  <body ontouchstart class="container">
+{%  extends 'base.html' %}
+{% block title %}
+     <title>积分商城首页</title>
+{% endblock %}
+{% block container %}
     <header class="wy-header">
       <div class="wy-header-title">积分商城</div>
     </header>
@@ -280,41 +263,10 @@
         </div>
       </div>
     </div>
-
-    <!--底部导航-->
-    <div class="foot-black"></div>
-    <div class="weui-tabbar wy-foot-menu">
-      <a href="index.html" class="weui-tabbar__item weui-bar__item--on">
-        <div class="weui-tabbar__icon foot-menu-home"></div>
-        <p class="weui-tabbar__label">首页</p>
-      </a>
-      <a href="../mall/templates/classify.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon foot-menu-list"></div>
-        <p class="weui-tabbar__label">分类</p>
-      </a>
-      <a href="../mall/templates/shopcart.html" class="weui-tabbar__item">
-        <span
-          class="weui-badge"
-          style="position: absolute;top: -.4em;right: 1em;"
-          >8</span
-        >
-        <div class="weui-tabbar__icon foot-menu-cart"></div>
-        <p class="weui-tabbar__label">购物车</p>
-      </a>
-      <a href="../mine/templates/mine.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon foot-menu-member"></div>
-        <p class="weui-tabbar__label">我的</p>
-      </a>
-    </div>
-
-    <script src="/static/lib/jquery-2.1.4.js"></script>
-    <script src="/static/lib/fastclick.js"></script>
-    <script>
-      $(function() {
-        FastClick.attach(document.body);
-      });
-    </script>
-    <script src="/static/js/jquery-weui.js"></script>
+    {# 包含底部的html模块 #}
+    {% include 'footer.html' %}
+{% endblock %}
+{% block footer %}
     <script src="/static/js/swiper.js"></script>
     <script>
       $('.swiper-banner').swiper({
@@ -345,5 +297,4 @@
         spaceBetween: 2
       });
     </script>
-  </body>
-</html>
+{% endblock %}
