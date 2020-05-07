@@ -24,3 +24,4 @@ urlpatterns = [
     # 商品部分
     url(r'^mall/',include('mall.urls',namespace="mall")),
 ]
+
