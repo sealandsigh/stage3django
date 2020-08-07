@@ -25,3 +25,4 @@ urlpatterns = [
     url(r'^mall/',include('mall.urls',namespace="mall")),
 ]
 
+
